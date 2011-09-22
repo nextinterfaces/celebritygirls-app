@@ -1,0 +1,99 @@
+package next.celebs.page;
+
+import next.celebs.FxUtil;
+import next.celebs.Globals;
+import next.celebs.UiResources;
+import next.celebs.di.Context;
+import next.celebs.model.Key;
+
+import org.adamtacy.client.ui.effects.core.NMorphStyle;
+
+
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.PopupPanel;
+import com.google.gwt.user.client.ui.ScrollPanel;
+
+public class ImagesPage extends PopupPanel implements IPage {
+
+	final static UiResources RES = UiResources.INSTANCE;
+	private boolean isHidden = true;
+
+	private SearchImageWidget searchWidget;
+
+	private final Context ctx;
+	private Key searchKey;
+
+	public ImagesPage(Context ctx_) {
+		this.ctx = ctx_;
+		setStyleName("yAzPage yPopupPage");
+		setWidth("680px");
+
+		setPopupPosition(336, 88);
+		show();
+
+		FlowPanel namesP = new FlowPanel();
+
+		ScrollPanel scrollPanel = new ScrollPanel(namesP);
+		scrollPanel.setSize(Globals.WRAPPER_WIDTH + "px", Globals.WRAPPER_HEIGHT + "px");
+
+		setWidget(scrollPanel);
+	}
+
+	public Key getSearchKey() {
+		return searchKey;
+	}
+
+	public void setSearchKey(Key searchKey) {
+		this.searchKey = searchKey;
+	}
+
+	@Override
+	public void doHide() {
+		ctx.getUi().getBrandingPage().doHide();
+		doClear();
+		if (isHidden) {
+			return;
+		}
+
+		NMorphStyle eff = FxUtil.doHide(this, null);
+		// eff.addEffectCompletedHandler(new EffectCompletedHandler() {
+		// @Override
+		// public void onEffectCompleted(EffectCompletedEvent event) {
+		// setPopupPosition(1025, 0);
+		// }
+		// });
+		eff.play();
+
+		isHidden = true;
+	}
+
+	@Override
+	public void doShow() {
+		if (searchWidget == null) {
+			System.out.println("::doShow " + getSearchKey());
+			searchWidget = new SearchImageWidget(getSearchKey(), 2, 10, ctx);
+			setWidget(searchWidget);
+		}
+		if (!isHidden) {
+			return;
+		}
+		// this.getElement().getStyle().setOpacity(0);
+		setPopupPosition(336, 88);
+		NMorphStyle eff = FxUtil.doShow(this, null);
+		eff.play();
+
+		isHidden = false;
+
+		ctx.getUi().getBrandingPage().doShow();
+	}
+
+	@Override
+	public void doClear() {
+		System.out.println("::doClear");
+		if (searchWidget != null) {
+			searchWidget.removeFromParent();
+			searchWidget = null;
+		}
+	}
+
+}
