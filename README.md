@@ -1,7 +1,7 @@
-Celebrity Girls App
+Celebrity Girls App (Rejected from BlackBerry)
 ====
 
-Celebrity Girls App allows you to browse for celebrity girls images. It was initially designed as BlackBerry PlayBook app. Yet after being rejected from BlackBerry app world I am releasing the app as a public domain.
+Celebrity Girls App allows you to browse for celebrity girls images. It was initially designed as BlackBerry PlayBook app. Yet after being rejected from BlackBerry appworld the app is being released on the public domain.
 
 ### Demo (WebKit only):
 http://nextinterfaces.com/projects/celebrity-girls/
