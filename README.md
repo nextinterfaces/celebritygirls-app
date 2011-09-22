@@ -15,3 +15,5 @@ MVC based. Amazing looking UI catalog. Cross-Platform.
 
 ### More information:
 http://nextinterfaces.com/
+
+Copyright (c) 2011 Vancouver Ywebb Consulting Ltd, released under Apache License v.2.0
