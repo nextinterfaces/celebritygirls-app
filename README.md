@@ -1,7 +1,7 @@
 Celebrities App (BlackBerry app)
 ====
 
-Celebrity App is a slick app ptotoype showcasing Google Image Search API. 
+Celebrity App is a elegant concept showcasing touch UI and Google Image Search API. 
 
 ### Demo:
 http://nextinterfaces.com/projects/celebrity-girls/
