@@ -1,4 +1,4 @@
-Celebrities App (BlackBerry app)
+Celebrities App (a Tablet HTML5 concept)
 ====
 
 Celebrity App is a elegant concept showcasing touch UI and Google Image Search API. 
