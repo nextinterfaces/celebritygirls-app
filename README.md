@@ -12,6 +12,7 @@ http://nextinterfaces.com/showcases/
 ### More information:
 http://nextinterfaces.com/
 
+![alt tag](http://nextinterfaces.com/http4e-eclipse/wp-content/uploads/2011/07/gwt-mobile-HTML5-app-celebrity1.png)
 
 
 
